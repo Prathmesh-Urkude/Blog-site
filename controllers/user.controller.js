@@ -1,5 +1,5 @@
 import User from "../models/user.model.js";
-import { generateToken } from "../services/authentication.js";
+import { generateToken } from "../services/authentication.service.js";
 import bcrypt from "bcrypt";
 
 const signinHandler = async function (req, res) {

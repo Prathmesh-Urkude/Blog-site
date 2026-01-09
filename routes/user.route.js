@@ -17,5 +17,12 @@ router.route('/signup')
 })
 .post(signupHandler);
 
+// Logout Route
+router.route('/signout')
+.get((req, res) => {
+    res.clearCookie('token');
+    res.redirect('/');
+});
+
 
 export default router;
