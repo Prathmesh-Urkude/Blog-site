@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <%- include('./partials/head') %>
-    <title>HomePage</title>
+        <title>HomePage</title>
 </head>
+
 <body>
     <%- include('./partials/navbar') %>
+    <div class="container mt-4 row row-cols-4 mx-auto">
+        <% blogs.forEach(blog=> { %>
+            <a href="/blog/<%= blog._id %>" class="text-decoration-none text-dark col">
+            <div class="card text-center" style="width: 18rem; height: 20rem;">
+                <img src="<%= blog.coverImage %>" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"><%= blog.title %></h5>
+                    <p class="card-text"><%= blog.content.split(" ").slice(0, 20).join(" ") %>...</p>
+                </div>
+            </div>
+            </a>
+        <% }) %>
+    </div>
     <%- include('./partials/scripts') %>
 </body>
+
 </html>

@@ -32,7 +32,7 @@ const addBlogHandler = async function (req, res) {
             coverImage,
             createdBy: req.user._id
         });
-        return res.redirect('/blog/${blog._id');
+        return res.redirect(`/blog/${blog._id}`);
     }
     catch (error) {
         res.status(500).render('add_blog', { error: error.message });

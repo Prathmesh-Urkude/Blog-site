@@ -18,6 +18,7 @@ connectMongoDb(process.env.MONGO_URI);
 
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+app.use(express.static(path.resolve("public")));
 
 app.use(cookieParser());
 
